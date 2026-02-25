@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, Arial;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+}
+
+.container{
+
+background:white;
+
+padding:40px;
+
+border-radius:12px;
+
+width:350px;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+h2{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:15px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+}
+
+input:focus{
+
+outline:none;
+
+border-color:#667eea;
+
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+background:#48bb78;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#38a169;
+
+}
+
+.error{
+
+color:red;
+
+text-align:center;
+
+margin-top:10px;
+
+}
+
+.link{
+
+text-align:center;
+
+margin-top:15px;
+
+}
+
+.link a{
+
+text-decoration:none;
+
+color:#667eea;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Login</h2>
+
+<form id="loginForm">
+
+<input id="loginId" placeholder="Username or Email">
+
+<input id="loginPassword" type="password" placeholder="Password">
+
+<button id="loginBtn">Login</button>
+
+</form>
+
+<div id="loginError" class="error"></div>
+
+<div class="link">
+
+<a href="signup.html">Create Account</a>
+
+</div>
+
+</div>
+
+<script>
+
+loginForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let users=JSON.parse(localStorage.getItem("users"))||[];
+
+let user=users.find(u=>
+
+u.username===loginId.value ||
+
+u.email===loginId.value
+
+);
+
+if(user && user.password===loginPassword.value){
+
+localStorage.setItem("currentUser",JSON.stringify(user));
+
+window.location.href="dashboard.html";
+
+}
+else{
+
+loginError.innerText="Invalid Credentials";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
