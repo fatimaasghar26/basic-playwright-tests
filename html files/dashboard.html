@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Segoe UI;
+
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+}
+
+.container{
+
+background:white;
+
+padding:50px;
+
+border-radius:12px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+width:400px;
+
+}
+
+h1{
+
+margin-bottom:30px;
+
+color:#333;
+
+}
+
+button{
+
+padding:12px 30px;
+
+background:#e53e3e;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#c53030;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="welcome"></h1>
+
+<button id="logout">Logout</button>
+
+</div>
+
+<script>
+
+let user=JSON.parse(localStorage.getItem("currentUser"));
+
+if(!user){
+
+window.location.href="login.html";
+
+}
+
+welcome.innerText="Welcome "+user.username;
+
+logout.onclick=function(){
+
+localStorage.removeItem("currentUser");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>

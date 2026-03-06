@@ -1,0 +1,19 @@
+TEST NAME: Login Test
+
+FILE: login.html
+
+FIELDS:
+
+email: ---
+password: ---
+
+STEPS:
+
+1 Open login page
+2 Enter email
+3 Enter password
+4 Click login
+5 Verify success message
+EXPECTED:
+
+Login successful message should appear & user is redirected to dashboard.
