@@ -1,0 +1,19 @@
+TEST NAME: Failed Signup Test
+
+FILE: Signup.html
+
+FIELDS:
+
+name: ---
+email: ---
+password: ---
+STEPS:
+
+1 Open signup page
+2 Enter name
+3 Skipp email
+4 Enter password
+5 Click signup
+6. Failed signup message appears.
+EXPECTED:
+User is failed to signup due to missing fields.
